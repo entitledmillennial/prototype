@@ -1,0 +1,237 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 1 Apr, 2017 9:18:08 PM by Hibernate Tools 5.2.1.Final -->
+<hibernate-mapping>
+    <class name="Bscit" table="models.bscit" catalog="test" optimistic-lock="version">
+        <id name="rollno" type="int">
+            <column name="rollno" />
+            <generator class="assigned" />
+        </id>
+        <property name="studname" type="string">
+            <column name="studname" length="100" not-null="true" />
+        </property>
+        <property name="dob" type="string">
+            <column name="dob" length="15" not-null="true" />
+        </property>
+        <property name="fname" type="string">
+            <column name="fname" length="100" not-null="true" />
+        </property>
+        <property name="mname" type="string">
+            <column name="mname" length="100" not-null="true" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="20" not-null="true" />
+        </property>
+        <property name="sem" type="string">
+            <column name="sem" length="20" not-null="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="500" not-null="true" />
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="10" not-null="true" />
+        </property>
+        <property name="s1i" type="int">
+            <column name="s1i" not-null="true" />
+        </property>
+        <property name="s1p" type="int">
+            <column name="s1p" not-null="true" />
+        </property>
+        <property name="s1t" type="int">
+            <column name="s1t" not-null="true" />
+        </property>
+        <property name="s2i" type="int">
+            <column name="s2i" not-null="true" />
+        </property>
+        <property name="s2p" type="int">
+            <column name="s2p" not-null="true" />
+        </property>
+        <property name="s2t" type="int">
+            <column name="s2t" not-null="true" />
+        </property>
+        <property name="s3i" type="int">
+            <column name="s3i" not-null="true" />
+        </property>
+        <property name="s3p" type="int">
+            <column name="s3p" not-null="true" />
+        </property>
+        <property name="s3t" type="int">
+            <column name="s3t" not-null="true" />
+        </property>
+        <property name="s4i" type="int">
+            <column name="s4i" not-null="true" />
+        </property>
+        <property name="s4p" type="int">
+            <column name="s4p" not-null="true" />
+        </property>
+        <property name="s4t" type="int">
+            <column name="s4t" not-null="true" />
+        </property>
+        <property name="s5i" type="int">
+            <column name="s5i" not-null="true" />
+        </property>
+        <property name="s5p" type="int">
+            <column name="s5p" not-null="true" />
+        </property>
+        <property name="s5t" type="int">
+            <column name="s5t" not-null="true" />
+        </property>
+        <property name="s1ittotal" type="int">
+            <column name="s1ittotal" not-null="true" />
+        </property>
+        <property name="s2ittotal" type="int">
+            <column name="s2ittotal" not-null="true" />
+        </property>
+        <property name="s3ittotal" type="int">
+            <column name="s3ittotal" not-null="true" />
+        </property>
+        <property name="s4ittotal" type="int">
+            <column name="s4ittotal" not-null="true" />
+        </property>
+        <property name="s5ittotal" type="int">
+            <column name="s5ittotal" not-null="true" />
+        </property>
+        <property name="grandtotal" type="int">
+            <column name="grandtotal" not-null="true" />
+        </property>
+        <property name="percentage" type="float">
+            <column name="percentage" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="s1git" type="string">
+            <column name="s1git" length="1" not-null="true" />
+        </property>
+        <property name="s2git" type="string">
+            <column name="s2git" length="1" not-null="true" />
+        </property>
+        <property name="s3git" type="string">
+            <column name="s3git" length="1" not-null="true" />
+        </property>
+        <property name="s4git" type="string">
+            <column name="s4git" length="1" not-null="true" />
+        </property>
+        <property name="s5git" type="string">
+            <column name="s5git" length="1" not-null="true" />
+        </property>
+        <property name="s1gp" type="string">
+            <column name="s1gp" length="1" not-null="true" />
+        </property>
+        <property name="s2gp" type="string">
+            <column name="s2gp" length="1" not-null="true" />
+        </property>
+        <property name="s3gp" type="string">
+            <column name="s3gp" length="1" not-null="true" />
+        </property>
+        <property name="s4gp" type="string">
+            <column name="s4gp" length="1" not-null="true" />
+        </property>
+        <property name="s5gp" type="string">
+            <column name="s5gp" length="1" not-null="true" />
+        </property>
+        <property name="s1gpit" type="int">
+            <column name="s1gpit" not-null="true" />
+        </property>
+        <property name="s2gpit" type="int">
+            <column name="s2gpit" not-null="true" />
+        </property>
+        <property name="s3gpit" type="int">
+            <column name="s3gpit" not-null="true" />
+        </property>
+        <property name="s4gpit" type="int">
+            <column name="s4gpit" not-null="true" />
+        </property>
+        <property name="s5gpit" type="int">
+            <column name="s5gpit" not-null="true" />
+        </property>
+        <property name="s1gpp" type="int">
+            <column name="s1gpp" not-null="true" />
+        </property>
+        <property name="s2gpp" type="int">
+            <column name="s2gpp" not-null="true" />
+        </property>
+        <property name="s3gpp" type="int">
+            <column name="s3gpp" not-null="true" />
+        </property>
+        <property name="s4gpp" type="int">
+            <column name="s4gpp" not-null="true" />
+        </property>
+        <property name="s5gpp" type="int">
+            <column name="s5gpp" not-null="true" />
+        </property>
+        <property name="s1cpit" type="int">
+            <column name="s1cpit" not-null="true" />
+        </property>
+        <property name="s2cpit" type="int">
+            <column name="s2cpit" not-null="true" />
+        </property>
+        <property name="s3cpit" type="int">
+            <column name="s3cpit" not-null="true" />
+        </property>
+        <property name="s4cpit" type="int">
+            <column name="s4cpit" not-null="true" />
+        </property>
+        <property name="s5cpit" type="int">
+            <column name="s5cpit" not-null="true" />
+        </property>
+        <property name="s1cpp" type="int">
+            <column name="s1cpp" not-null="true" />
+        </property>
+        <property name="s2cpp" type="int">
+            <column name="s2cpp" not-null="true" />
+        </property>
+        <property name="s3cpp" type="int">
+            <column name="s3cpp" not-null="true" />
+        </property>
+        <property name="s4cpp" type="int">
+            <column name="s4cpp" not-null="true" />
+        </property>
+        <property name="s5cpp" type="int">
+            <column name="s5cpp" not-null="true" />
+        </property>
+        <property name="cptotal" type="int">
+            <column name="cptotal" not-null="true" />
+        </property>
+        <property name="s1cxgit" type="int">
+            <column name="s1cxgit" not-null="true" />
+        </property>
+        <property name="s2cxgit" type="int">
+            <column name="s2cxgit" not-null="true" />
+        </property>
+        <property name="s3cxgit" type="int">
+            <column name="s3cxgit" not-null="true" />
+        </property>
+        <property name="s4cxgit" type="int">
+            <column name="s4cxgit" not-null="true" />
+        </property>
+        <property name="s5cxgit" type="int">
+            <column name="s5cxgit" not-null="true" />
+        </property>
+        <property name="s1cxgp" type="int">
+            <column name="s1cxgp" not-null="true" />
+        </property>
+        <property name="s2cxgp" type="int">
+            <column name="s2cxgp" not-null="true" />
+        </property>
+        <property name="s3cxgp" type="int">
+            <column name="s3cxgp" not-null="true" />
+        </property>
+        <property name="s4cxgp" type="int">
+            <column name="s4cxgp" not-null="true" />
+        </property>
+        <property name="s5cxgp" type="int">
+            <column name="s5cxgp" not-null="true" />
+        </property>
+        <property name="cxgtotal" type="int">
+            <column name="cxgtotal" not-null="true" />
+        </property>
+        <property name="cgpa" type="float">
+            <column name="cgpa" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="finalgrade" type="string">
+            <column name="finalgrade" length="1" not-null="true" />
+        </property>
+        <property name="photo" type="binary">
+            <column name="photo" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

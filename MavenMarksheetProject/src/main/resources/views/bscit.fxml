@@ -1,0 +1,2053 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" style="-fx-background-color: white;" stylesheets="@../css/Metro-UI.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BscitController">
+   <children>
+      <StackPane fx:id="stackPane" disable="true" opacity="0.0" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: white;" stylesheets="@../css/Metro-UI.css" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="200.0">
+         <children>
+            <ImageView fx:id="photoForView" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="photoCloseBtn" mnemonicParsing="false" onAction="#photoCloseClicked" opacity="0.0" prefHeight="50.0" prefWidth="50.0" styleClass="btn" text="X" StackPane.alignment="TOP_RIGHT" />
+         </children>
+      </StackPane>
+      <AnchorPane id="AnchorPane" fx:id="printPane" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: white;" stylesheets="@../css/Metro-UI.css">
+         <children>
+            <Button fx:id="btnPrint" mnemonicParsing="false" onAction="#print" styleClass="btn" text="PRINT" AnchorPane.leftAnchor="950.0" AnchorPane.topAnchor="30.0" />
+            <AnchorPane fx:id="snapshotPane" opacity="0.0" prefHeight="500.0" prefWidth="920.0">
+               <children>
+                  <ImageView fx:id="iv" fitHeight="500.0" fitWidth="920.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="marksheetPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="1000.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="100.0">
+               <children>
+                  <GridPane fx:id="gp" layoutX="25.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="320.0" prefWidth="900.0" styleClass="marksheet-grid" stylesheets="@../css/gridanchorpane.css" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="127.0" AnchorPane.topAnchor="150.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="110.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="110.0" />
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="40.0" styleClass="marksheet-grid-cell-first-row-first-column" stylesheets="@../css/gridanchorpane.css" GridPane.rowSpan="2">
+                           <children>
+                              <Label alignment="TOP_CENTER" layoutX="28.0" layoutY="12.0" prefHeight="36.0" prefWidth="45.0" text="Course &#10; Code">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="40.0" styleClass="marksheet-grid-cell-first-row" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="1" GridPane.rowSpan="2">
+                           <children>
+                              <Label alignment="TOP_CENTER" layoutX="25.0" layoutY="20.0" prefHeight="21.0" prefWidth="90.0" text="Course Title">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="10" GridPane.rowIndex="2">
+                           <children>
+                              <Label fx:id="s1ittotal" alignment="CENTER" layoutX="11.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="9" GridPane.rowIndex="2">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" prefHeight="20.0" prefWidth="28.0" text="40">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="8" GridPane.rowIndex="2">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" prefHeight="20.0" prefWidth="28.0" text="100">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="7" GridPane.rowIndex="2">
+                           <children>
+                              <Label fx:id="s1t" alignment="CENTER" layoutX="11.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" prefHeight="20.0" prefWidth="28.0" text="30">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" prefHeight="20.0" prefWidth="28.0" text="75">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                           <children>
+                              <Label fx:id="s1i" alignment="CENTER" layoutX="11.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" prefHeight="20.0" prefWidth="28.0" text="10">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <children>
+                              <Label alignment="CENTER" layoutX="10.0" prefHeight="20.0" prefWidth="28.0" text="25@">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.rowSpan="2">
+                           <children>
+                              <Label fx:id="mCT1" alignment="TOP_CENTER" layoutX="9.0" layoutY="2.0" prefHeight="35.0" prefWidth="125.0" text="Java and Data&#10;Structure">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" styleClass="marksheet-grid-cell-first-column" stylesheets="@../css/gridanchorpane.css" GridPane.rowIndex="2" GridPane.rowSpan="2">
+                           <children>
+                              <Label fx:id="mCC1" alignment="TOP_CENTER" layoutX="16.0" layoutY="12.0" prefHeight="17.0" prefWidth="59.0" text="USIT401">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="40.0" styleClass="marksheet-grid-cell-first-row" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="8" GridPane.columnSpan="3">
+                           <children>
+                              <Label alignment="CENTER" layoutX="38.0" layoutY="-1.0" prefHeight="31.0" prefWidth="47.0" text="Total&#10;Marks">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="40.0" styleClass="marksheet-grid-cell-first-row" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="5" GridPane.columnSpan="3">
+                           <children>
+                              <Label alignment="CENTER" layoutX="20.0" layoutY="-3.0" prefHeight="35.0" prefWidth="83.0" text="Semester End&#10; Examination">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="10" GridPane.rowIndex="1">
+                           <children>
+                              <Label alignment="CENTER" layoutX="1.0" layoutY="-4.0" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" text="Marks&#10; Obt">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="9" GridPane.rowIndex="1">
+                           <children>
+                              <Label alignment="CENTER" layoutX="1.0" layoutY="-4.0" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" text=" Min&#10;Marks">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="8" GridPane.rowIndex="1">
+                           <children>
+                              <Label alignment="CENTER" layoutX="1.0" layoutY="-5.0" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" text=" Max&#10;Marks">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                           <children>
+                              <Label alignment="CENTER" layoutX="1.0" layoutY="-5.0" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" text="Marks&#10; Obt">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                           <children>
+                              <Label alignment="CENTER" layoutX="3.0" layoutY="-6.0" minWidth="-Infinity" prefHeight="40.0" prefWidth="35.0" text=" Min&#10;Marks">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                           <children>
+                              <Label alignment="CENTER" layoutX="3.0" layoutY="-5.0" minWidth="-Infinity" prefHeight="40.0" prefWidth="35.0" text=" Max&#10;Marks">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                           <children>
+                              <Label alignment="CENTER" layoutX="1.0" layoutY="-4.0" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" text="Marks&#10; Obt">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <children>
+                              <Label alignment="CENTER" layoutX="1.0" layoutY="-1.0" minWidth="-Infinity" prefHeight="31.0" prefWidth="40.0" text=" Min&#10;Marks">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="40.0" styleClass="marksheet-grid-cell-first-row" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="15" GridPane.rowSpan="2">
+                           <children>
+                              <Label alignment="CENTER" layoutX="-4.0" layoutY="4.0" prefHeight="52.0" prefWidth="50.0" text="CGPA=&#10; ΣCG/&#10;   ΣC">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="40.0" styleClass="marksheet-grid-cell-first-row" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="14" GridPane.rowSpan="2">
+                           <children>
+                              <Label alignment="CENTER" layoutX="16.0" layoutY="12.0" prefHeight="36.0" prefWidth="59.0" text="CG = &#10;C x G">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="40.0" styleClass="marksheet-grid-cell-first-row" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="13" GridPane.rowSpan="2">
+                           <children>
+                              <Label alignment="CENTER" layoutX="1.0" layoutY="12.0" prefHeight="36.0" prefWidth="40.0" text="Credit&#10;Points">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="40.0" styleClass="marksheet-grid-cell-first-row" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="12" GridPane.rowSpan="2">
+                           <children>
+                              <Label alignment="CENTER" layoutX="1.0" layoutY="12.0" prefHeight="36.0" prefWidth="40.0" text="Grade&#10;Points">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="40.0" styleClass="marksheet-grid-cell-first-row" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="11" GridPane.rowSpan="2">
+                           <children>
+                              <Label alignment="TOP_CENTER" layoutX="3.0" layoutY="20.0" prefHeight="21.0" prefWidth="35.0" text="Grade">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <children>
+                              <Label alignment="CENTER" layoutY="-3.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="40.0" text=" Max&#10;Marks">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" prefHeight="30.0" prefWidth="200.0" styleClass="marksheet-grid-cell-first-row" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="2" GridPane.columnSpan="3">
+                           <children>
+                              <Label alignment="TOP_CENTER" layoutX="2.0" layoutY="6.0" prefHeight="17.0" prefWidth="115.0" text="Internal Assessment">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="11" GridPane.rowIndex="2">
+                           <children>
+                              <Label fx:id="s1git" alignment="CENTER" layoutX="11.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="12" GridPane.rowIndex="2">
+                           <children>
+                              <Label fx:id="s1gpit" alignment="CENTER" layoutX="11.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="14" GridPane.rowIndex="2">
+                           <children>
+                              <Label fx:id="s1cxgit" alignment="CENTER" layoutX="22.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="13" GridPane.rowIndex="2">
+                           <children>
+                              <Label fx:id="s1cpit" alignment="CENTER" layoutX="11.0" prefHeight="20.0" prefWidth="28.0" text="3">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="15" GridPane.rowIndex="2" GridPane.rowSpan="10">
+                           <children>
+                              <Label fx:id="cgpa" alignment="TOP_CENTER" layoutX="3.0" layoutY="92.0" prefHeight="25.0" prefWidth="35.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <children>
+                              <Label alignment="CENTER" layoutX="10.0" prefHeight="20.0" prefWidth="28.0" text="NA">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" prefHeight="20.0" prefWidth="28.0" text="NA">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" prefHeight="20.0" prefWidth="28.0" text="NA">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" prefHeight="20.0" prefWidth="28.0" text="50">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="6" GridPane.rowIndex="3">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" prefHeight="20.0" prefWidth="28.0" text="20">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="7" GridPane.rowIndex="3">
+                           <children>
+                              <Label fx:id="s1p" alignment="CENTER" layoutX="11.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="8" GridPane.rowIndex="3">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" prefHeight="20.0" prefWidth="28.0" text="50">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="9" GridPane.rowIndex="3">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" prefHeight="20.0" prefWidth="28.0" text="20">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="10" GridPane.rowIndex="3">
+                           <children>
+                              <Label fx:id="s1pstar" alignment="CENTER" layoutX="11.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="11" GridPane.rowIndex="3">
+                           <children>
+                              <Label fx:id="s1gp" alignment="CENTER" layoutX="11.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="12" GridPane.rowIndex="3">
+                           <children>
+                              <Label fx:id="s1gpp" alignment="CENTER" layoutX="11.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="13" GridPane.rowIndex="3">
+                           <children>
+                              <Label fx:id="s1cpp" alignment="CENTER" layoutX="11.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="14" GridPane.rowIndex="3">
+                           <children>
+                              <Label fx:id="s1cxgp" alignment="CENTER" layoutX="22.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="8" GridPane.rowIndex="5">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="50">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="7" GridPane.rowIndex="5">
+                           <children>
+                              <Label fx:id="s2p" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="6" GridPane.rowIndex="5">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="20">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="5" GridPane.rowIndex="5">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="50">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="20.0" text="NA">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="20.0" text="NA">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="20.0" text="NA">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="14" GridPane.rowIndex="4">
+                           <children>
+                              <Label fx:id="s2cxgit" alignment="CENTER" layoutX="22.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="13" GridPane.rowIndex="4">
+                           <children>
+                              <Label fx:id="s2cpit" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="12" GridPane.rowIndex="4">
+                           <children>
+                              <Label fx:id="s2gpit" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="11" GridPane.rowIndex="4">
+                           <children>
+                              <Label fx:id="s2git" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="10" GridPane.rowIndex="4">
+                           <children>
+                              <Label fx:id="s2ittotal" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="9" GridPane.rowIndex="4">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="40">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="8" GridPane.rowIndex="4">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" prefHeight="20.0" prefWidth="28.0" text="100">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="7" GridPane.rowIndex="4">
+                           <children>
+                              <Label fx:id="s2t" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="6" GridPane.rowIndex="4">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="30">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="75">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                           <children>
+                              <Label fx:id="s2i" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="10">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                           <children>
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="25">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.rowSpan="2">
+                           <children>
+                              <Label fx:id="mCT2" alignment="TOP_CENTER" prefHeight="35.0" prefWidth="125.0" text="Label">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="40.0" styleClass="marksheet-grid-cell-first-column" stylesheets="@../css/gridanchorpane.css" GridPane.rowIndex="4" GridPane.rowSpan="2">
+                           <children>
+                              <Label fx:id="mCC2" alignment="TOP_CENTER" layoutX="15.0" layoutY="13.0" prefHeight="17.0" prefWidth="60.0" text="Label">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="10" GridPane.rowIndex="6">
+                           <children>
+                              <Label fx:id="s3ittotal" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="9" GridPane.rowIndex="6">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="40">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="8" GridPane.rowIndex="6">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="100">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="7" GridPane.rowIndex="6">
+                           <children>
+                              <Label fx:id="s3t" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="6" GridPane.rowIndex="6">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="30">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="5" GridPane.rowIndex="6">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="75">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                           <children>
+                              <Label fx:id="s3i" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="3" GridPane.rowIndex="6">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="10">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                           <children>
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="25">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="1" GridPane.rowIndex="6" GridPane.rowSpan="2">
+                           <children>
+                              <Label fx:id="mCT3" alignment="TOP_CENTER" prefHeight="35.0" prefWidth="125.0" text="Label">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="40.0" styleClass="marksheet-grid-cell-first-column" stylesheets="@../css/gridanchorpane.css" GridPane.rowIndex="6" GridPane.rowSpan="2">
+                           <children>
+                              <Label fx:id="mCC3" alignment="TOP_CENTER" layoutX="15.0" layoutY="13.0" maxHeight="-Infinity" prefHeight="17.0" prefWidth="60.0" text="Label">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="14" GridPane.rowIndex="5">
+                           <children>
+                              <Label fx:id="s2cxgp" alignment="CENTER" layoutX="22.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="13" GridPane.rowIndex="5">
+                           <children>
+                              <Label fx:id="s2cpp" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="12" GridPane.rowIndex="5">
+                           <children>
+                              <Label fx:id="s2gpp" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="11" GridPane.rowIndex="5">
+                           <children>
+                              <Label fx:id="s2gp" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="10" GridPane.rowIndex="5">
+                           <children>
+                              <Label fx:id="s2pstar" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="9" GridPane.rowIndex="5">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="20">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="40.0" styleClass="marksheet-grid-cell-first-column" stylesheets="@../css/gridanchorpane.css" GridPane.rowIndex="8" GridPane.rowSpan="2">
+                           <children>
+                              <Label fx:id="mCC4" alignment="TOP_CENTER" layoutX="15.0" layoutY="13.0" prefHeight="17.0" prefWidth="60.0" text="Label">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="14" GridPane.rowIndex="7">
+                           <children>
+                              <Label fx:id="s3cxgp" alignment="CENTER" layoutX="22.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="13" GridPane.rowIndex="7">
+                           <children>
+                              <Label fx:id="s3cpp" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="12" GridPane.rowIndex="7">
+                           <children>
+                              <Label fx:id="s3gpp" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="11" GridPane.rowIndex="7">
+                           <children>
+                              <Label fx:id="s3gp" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="14" GridPane.rowIndex="6">
+                           <children>
+                              <Label fx:id="s3cxgit" alignment="CENTER" layoutX="22.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="13" GridPane.rowIndex="6">
+                           <children>
+                              <Label fx:id="s3cpit" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="12" GridPane.rowIndex="6">
+                           <children>
+                              <Label fx:id="s3gpit" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="11" GridPane.rowIndex="6">
+                           <children>
+                              <Label fx:id="s3git" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="10" GridPane.rowIndex="7">
+                           <children>
+                              <Label fx:id="s3pstar" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="9" GridPane.rowIndex="7">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="20">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="8" GridPane.rowIndex="7">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="50">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="7" GridPane.rowIndex="7">
+                           <children>
+                              <Label fx:id="s3p" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="6" GridPane.rowIndex="7">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="20">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="5" GridPane.rowIndex="7">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="50">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="4" GridPane.rowIndex="7">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="NA">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="20.0" text="NA">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                           <children>
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="NA">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="4" GridPane.rowIndex="9">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="NA">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="3" GridPane.rowIndex="9">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="NA">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                           <children>
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="NA">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="14" GridPane.rowIndex="8">
+                           <children>
+                              <Label fx:id="s4cxgit" alignment="CENTER" layoutX="22.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="13" GridPane.rowIndex="8">
+                           <children>
+                              <Label fx:id="s4cpit" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="12" GridPane.rowIndex="8">
+                           <children>
+                              <Label fx:id="s4gpit" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="11" GridPane.rowIndex="8">
+                           <children>
+                              <Label fx:id="s4git" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="10" GridPane.rowIndex="8">
+                           <children>
+                              <Label fx:id="s4ittotal" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="9" GridPane.rowIndex="8">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="40">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="8" GridPane.rowIndex="8">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="100">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="7" GridPane.rowIndex="8">
+                           <children>
+                              <Label fx:id="s4t" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="6" GridPane.rowIndex="8">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="30">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="5" GridPane.rowIndex="8">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="75">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="4" GridPane.rowIndex="8">
+                           <children>
+                              <Label fx:id="s4i" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="3" GridPane.rowIndex="8">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="10">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                           <children>
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="25">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="1" GridPane.rowIndex="8" GridPane.rowSpan="2">
+                           <children>
+                              <Label fx:id="mCT4" alignment="TOP_CENTER" prefHeight="35.0" prefWidth="125.0" text="Label">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="7" GridPane.rowIndex="10">
+                           <children>
+                              <Label fx:id="s5t" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="6" GridPane.rowIndex="10">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="30">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="5" GridPane.rowIndex="10">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="75">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="4" GridPane.rowIndex="10">
+                           <children>
+                              <Label fx:id="s5i" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="3" GridPane.rowIndex="10">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="10">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="2" GridPane.rowIndex="10">
+                           <children>
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="25">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="1" GridPane.rowIndex="10" GridPane.rowSpan="2">
+                           <children>
+                              <Label fx:id="mCT5" alignment="TOP_CENTER" prefHeight="35.0" prefWidth="125.0" text="Label">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="40.0" styleClass="marksheet-grid-cell-first-column" stylesheets="@../css/gridanchorpane.css" GridPane.rowIndex="10" GridPane.rowSpan="2">
+                           <children>
+                              <Label fx:id="mCC5" alignment="TOP_CENTER" layoutX="15.0" layoutY="13.0" prefHeight="17.0" prefWidth="60.0" text="Label">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="14" GridPane.rowIndex="9">
+                           <children>
+                              <Label fx:id="s4cxgp" alignment="CENTER" layoutX="22.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="13" GridPane.rowIndex="9">
+                           <children>
+                              <Label fx:id="s4cpp" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="12" GridPane.rowIndex="9">
+                           <children>
+                              <Label fx:id="s4gpp" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="11" GridPane.rowIndex="9">
+                           <children>
+                              <Label fx:id="s4gp" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="10" GridPane.rowIndex="9">
+                           <children>
+                              <Label fx:id="s4pstar" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="9" GridPane.rowIndex="9">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="20">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="8" GridPane.rowIndex="9">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="50">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="7" GridPane.rowIndex="9">
+                           <children>
+                              <Label fx:id="s4p" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="6" GridPane.rowIndex="9">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="20">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="5" GridPane.rowIndex="9">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="50">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="11" GridPane.rowIndex="11">
+                           <children>
+                              <Label fx:id="s5gp" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="10" GridPane.rowIndex="11">
+                           <children>
+                              <Label fx:id="s5pstar" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="9" GridPane.rowIndex="11">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="20">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="8" GridPane.rowIndex="11">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="50">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="7" GridPane.rowIndex="11">
+                           <children>
+                              <Label fx:id="s5p" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="6" GridPane.rowIndex="11">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="20">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="5" GridPane.rowIndex="11">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="50">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="4" GridPane.rowIndex="11">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="NA">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="3" GridPane.rowIndex="11">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="NA">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="2" GridPane.rowIndex="11">
+                           <children>
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="1.0" prefHeight="20.0" prefWidth="20.0" text="NA">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="14" GridPane.rowIndex="10">
+                           <children>
+                              <Label fx:id="s5cxgit" alignment="CENTER" layoutX="22.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="13" GridPane.rowIndex="10">
+                           <children>
+                              <Label fx:id="s5cpit" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="12" GridPane.rowIndex="10">
+                           <children>
+                              <Label fx:id="s5gpit" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="11" GridPane.rowIndex="10">
+                           <children>
+                              <Label fx:id="s5git" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="10" GridPane.rowIndex="10">
+                           <children>
+                              <Label fx:id="s5ittotal" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="9" GridPane.rowIndex="10">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="40">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="8" GridPane.rowIndex="10">
+                           <children>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="100">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="2" GridPane.columnSpan="11" GridPane.rowIndex="12">
+                           <children>
+                              <Label fx:id="cptotal" alignment="CENTER" layoutX="155.0" layoutY="2.0" prefHeight="17.0" prefWidth="140.0" text="Label">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell-first-column" stylesheets="@../css/gridanchorpane.css" GridPane.columnSpan="2" GridPane.rowIndex="12">
+                           <children>
+                              <Label fx:id="mRemark" alignment="CENTER" prefHeight="17.0" prefWidth="221.0" text="Label">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="14" GridPane.rowIndex="11">
+                           <children>
+                              <Label fx:id="s5cxgp" alignment="CENTER" layoutX="22.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="13" GridPane.rowIndex="11">
+                           <children>
+                              <Label fx:id="s5cpp" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="12" GridPane.rowIndex="11">
+                           <children>
+                              <Label fx:id="s5gpp" alignment="CENTER" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="28.0" text="L">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="14" GridPane.rowIndex="12">
+                           <children>
+                              <Label fx:id="cxgtotal" alignment="CENTER" layoutX="-25.0" layoutY="2.0" prefHeight="17.0" prefWidth="132.0" text="ΣCG">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="13" GridPane.rowIndex="12">
+                           <children>
+                              <Label fx:id="cptotalstar" alignment="CENTER" layoutX="-3.0" layoutY="2.0" prefHeight="17.0" prefWidth="48.0" text="ΣC">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="15" GridPane.rowIndex="12">
+                           <children>
+                              <Label fx:id="mFinalGrade" alignment="CENTER" prefHeight="17.0" prefWidth="50.0" text="Grade">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="40.0" styleClass="marksheet-grid-cell-first-column" stylesheets="@../css/gridanchorpane.css" GridPane.columnSpan="4" GridPane.rowIndex="13">
+                           <children>
+                              <Label fx:id="mSem1" alignment="CENTER" layoutX="13.0" layoutY="-3.0" prefHeight="35.0" prefWidth="281.0" text="SEMESTER-II&#10;Credits=20 GPA=7.00">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="4" GridPane.columnSpan="4" GridPane.rowIndex="13">
+                           <children>
+                              <Label fx:id="mSem2" alignment="CENTER" layoutX="2.0" layoutY="-3.0" prefHeight="30.0" prefWidth="153.0" text="SEMESTER-II&#10;Credits=20 GPA=7.00">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="8" GridPane.columnSpan="4" GridPane.rowIndex="13">
+                           <children>
+                              <Label fx:id="mSem3" alignment="CENTER" layoutX="4.0" layoutY="-3.0" prefHeight="35.0" prefWidth="153.0" text="SEMESTER-II&#10;Credits=20 GPA=7.00">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="40.0" styleClass="marksheet-grid-cell" stylesheets="@../css/gridanchorpane.css" GridPane.columnIndex="12" GridPane.columnSpan="4" GridPane.rowIndex="13">
+                           <children>
+                              <Label fx:id="mSem4" alignment="CENTER" layoutX="27.0" layoutY="-3.0" prefHeight="35.0" prefWidth="153.0" text="SEMESTER-II&#10;Credits=20 GPA=7.00">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
+                  <ImageView fx:id="icllogo" fitHeight="88.0" fitWidth="123.0" layoutX="21.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icllogo.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="95.0" fitWidth="480.0" layoutX="218.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/marksheetheader.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="mPhoto" fitHeight="90.0" fitWidth="100.0" layoutX="783.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/dummystudent.png" />
+                     </image>
+                  </ImageView>
+                  <GridPane alignment="CENTER" gridLinesVisible="true" layoutX="20.0" layoutY="106.0" prefHeight="35.0" prefWidth="853.0" AnchorPane.rightAnchor="127.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Examination Seat No." GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label text="Name of he Candidate" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label text="Month &amp; Year of Exam." GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="mRollNo" alignment="CENTER" prefHeight="22.0" prefWidth="279.0" text="Label" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="mSName" alignment="CENTER" prefHeight="17.0" prefWidth="278.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="mYear" alignment="CENTER" prefHeight="17.0" prefWidth="280.0" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+                  <Label fx:id="mDate" layoutX="25.0" layoutY="477.0" prefHeight="17.0" prefWidth="176.0" text="Date">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="mPlace" layoutX="25.0" layoutY="503.0" prefHeight="17.0" prefWidth="176.0" text="Place">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="208.0" layoutY="506.0" prefHeight="30.0" prefWidth="69.0" text="Prepared By">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="389.0" layoutY="507.0" prefHeight="30.0" prefWidth="69.0" text="Checked By">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="560.0" layoutY="505.0" prefHeight="30.0" prefWidth="114.0" text="Chairperson (Exam)">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="805.0" layoutY="505.0" prefHeight="30.0" text="Principal">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="mProg" layoutX="21.0" layoutY="90.0" prefHeight="17.0" prefWidth="299.0" text="PROGRAMME : ">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="mSem" layoutX="698.0" layoutY="90.0" prefHeight="17.0" prefWidth="132.0" text="SEMESTER">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane id="AnchorPane" fx:id="crudPane" opacity="0.0" style="-fx-background-color: white;" stylesheets="@../css/Metro-UI.css">
+         <children>
+            <ScrollPane AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
+               <content>
+                  <SplitPane dividerPositions="0.33, 0.8" prefHeight="1000.0" prefWidth="1240.0">
+                     <items>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <Button fx:id="btnPhoto" layoutX="14.0" layoutY="148.0" mnemonicParsing="false" onAction="#choosePhoto" styleClass="btn" text="Choose a Photo">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                              <ImageView fx:id="imgPhoto" fitHeight="200.0" fitWidth="200.0" layoutX="174.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true" />
+                              <TextField fx:id="txtRollNo" layoutX="165.0" layoutY="370.0" prefHeight="25.0" prefWidth="212.0" />
+                              <TextField fx:id="txtSName" layoutX="164.0" layoutY="417.0" prefHeight="25.0" prefWidth="213.0" />
+                              <DatePicker fx:id="txtDOB" layoutX="165.0" layoutY="527.0" prefHeight="25.0" prefWidth="212.0" />
+                              <TextField fx:id="txtFName" layoutX="164.0" layoutY="579.0" prefHeight="25.0" prefWidth="213.0" />
+                              <TextField fx:id="txtMName" layoutX="163.0" layoutY="619.0" prefHeight="25.0" prefWidth="216.0" />
+                              <TextField fx:id="txtPhoneNo" layoutX="163.0" layoutY="664.0" prefHeight="25.0" prefWidth="215.0" />
+                              <TextArea fx:id="txtAddress" layoutX="163.0" layoutY="720.0" prefHeight="168.0" prefWidth="217.0" />
+                              <RadioButton fx:id="radioF" layoutX="163.0" layoutY="906.0" mnemonicParsing="false" onAction="#onGenderSelect" text="Female">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="gender" />
+                                 </toggleGroup></RadioButton>
+                              <RadioButton fx:id="radioM" layoutX="248.0" layoutY="906.0" mnemonicParsing="false" onAction="#onGenderSelect" text="Male" toggleGroup="$gender" />
+                              <RadioButton fx:id="radioO" layoutX="321.0" layoutY="906.0" mnemonicParsing="false" onAction="#onGenderSelect" text="Other" toggleGroup="$gender" />
+                              <Text layoutX="113.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Personal Details" underline="true">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="29.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Names should be as per the HSC marksheet">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Text>
+                              <Label layoutX="23.0" layoutY="369.0" text="Strudent Roll No">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="23.0" layoutY="416.0" text="Student Name">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="25.0" layoutY="528.0" text="Date Of Birth">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="21.0" layoutY="579.0" text="Fathers Name">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="21.0" layoutY="619.0" prefHeight="28.0" prefWidth="119.0" text="Mothers Name">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="26.0" layoutY="664.0" text="Phone Number">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="29.0" layoutY="720.0" text="Address">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="27.0" layoutY="903.0" text="Gender">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="pDecade" layoutX="163.0" layoutY="474.0" mnemonicParsing="false" onAction="#clickPDecade" prefHeight="29.0" prefWidth="97.0" styleClass="btn" text="- Decade" />
+                              <Button fx:id="nDecade" layoutX="281.0" layoutY="474.0" mnemonicParsing="false" onAction="#clickNDecade" prefHeight="29.0" prefWidth="99.0" styleClass="btn" text="+ Decade" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <Text layoutX="160.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Academic Details" underline="true">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="37.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Semester">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <ChoiceBox fx:id="chooseSem" layoutX="140.0" layoutY="85.0" prefWidth="150.0" styleClass="combo-box-base" /> 
+                              <Text layoutX="37.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose whichever is applicable" />
+                              <CheckBox fx:id="chkNCC" layoutX="37.0" layoutY="160.0" mnemonicParsing="false" text="NCC" />
+                              <CheckBox fx:id="chkSports" layoutX="160.0" layoutY="160.0" mnemonicParsing="false" text="Sports" />
+                              <CheckBox fx:id="chkNSS" layoutX="281.0" layoutY="160.0" mnemonicParsing="false" text="NSS" />
+                              <CheckBox fx:id="chkCultural" layoutX="392.0" layoutY="160.0" mnemonicParsing="false" text="Cultural" />
+                              <GridPane gridLinesVisible="true" layoutX="57.0" layoutY="260.0" prefHeight="998.0" prefWidth="514.0" vgap="20.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="200.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="29.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <TextField fx:id="txtS1T" alignment="CENTER" promptText="Enter Marks" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="txtS1I" promptText="Enter Marks" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="txtS1P" promptText="Enter Marks" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="txtS2T" promptText="Enter Marks" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="txtS2I" promptText="Enter Marks" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="txtS2P" promptText="Enter Marks" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="txtS3T" promptText="Enter Marks" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="txtS3I" promptText="Enter Marks" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="txtS3P" promptText="Enter Marks" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="txtS4T" promptText="Enter Marks" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="txtS4I" promptText="Enter Marks" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="txtS4P" promptText="Enter Marks" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="txtS5T" promptText="Enter Marks" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="txtS5I" promptText="Enter Marks" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="txtS5P" promptText="Enter Marks" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label fx:id="lblS1Total" text="Label" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblS2Total" text="Label" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblS3Total" text="Label" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblS4Total" text="Label" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblS5Total" text="Label" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblS12345Total" text="Total" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Subject" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Theory" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Internal" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Practical" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="s1name" strokeType="OUTSIDE" strokeWidth="0.0" text="Subject 1&#10;&#10;&#10;&#10;" wrappingWidth="97.2138671875" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="s2name" strokeType="OUTSIDE" strokeWidth="0.0" text="Subject 2&#9;&#9;&#10;&#10;&#10;" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="s3name" strokeType="OUTSIDE" strokeWidth="0.0" text="Subject 3&#9;&#9;&#10;&#10;&#10;&#10;" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="s4name" strokeType="OUTSIDE" strokeWidth="0.0" text="Subject 4&#9;&#9;&#10;&#10;&#10;&#10;" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="s5name" strokeType="OUTSIDE" strokeWidth="0.0" text="Subject 5&#9;&#9;&#10;&#10;&#10;&#10;" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Text layoutX="32.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Final Assesment" underline="true">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Text>
+                              <Label fx:id="ordinance" layoutX="109.0" layoutY="232.0" text="&#10;&#10;" textFill="RED" />
+                           </children>
+                        </AnchorPane>
+                     </items>
+                  </SplitPane>
+               </content>
+            </ScrollPane>
+            <Button fx:id="btnBack1" layoutX="50.0" layoutY="6.0" mnemonicParsing="false" onAction="#clickBack" prefHeight="30.0" prefWidth="141.0" styleClass="btn" text="Back">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnSave1" layoutX="641.0" layoutY="2.0" mnemonicParsing="false" onAction="#clickSave" prefHeight="39.0" prefWidth="141.0" styleClass="btn" text="Save">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane id="AnchorPane" fx:id="tablePane" prefHeight="700.0" prefWidth="800.0" stylesheets="@../css/Metro-UI.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TreeTableView fx:id="tableBscit" styleClass="table-view" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="48.0">
+              <columns>
+                  <TreeTableColumn fx:id="colSemester" prefWidth="75.0" text="SEMESTER" />
+                <TreeTableColumn fx:id="colAction" prefWidth="75.0" text="Action" />
+                <TreeTableColumn fx:id="colPhoto" prefWidth="75.0" text="Photo" />
+                  <TreeTableColumn fx:id="colName" prefWidth="75.0" text="Name" />
+                  <TreeTableColumn fx:id="colTotal" prefWidth="75.0" text="Total" />
+                  <TreeTableColumn fx:id="colPercentage" prefWidth="75.0" text="Percentage" />
+                  <TreeTableColumn fx:id="colGrade" prefWidth="75.0" text="Grade" />
+                  <TreeTableColumn fx:id="colCGPA" prefWidth="75.0" text="CGPA" />
+              </columns>
+               <columnResizePolicy>
+                  <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TreeTableView>
+            <ImageView fx:id="imgLoad" fitHeight="25.0" fitWidth="41.0" layoutX="613.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="170.0">
+               <image>
+                  <Image url="@../images/301.GIF" />
+               </image>
+            </ImageView>
+            <ProgressBar fx:id="progBar" focusTraversable="false" layoutX="-1.0" layoutY="30.0" progress="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <Button fx:id="btnNewRecord" layoutX="674.0" layoutY="2.0" mnemonicParsing="false" onAction="#clickNew" prefHeight="25.0" prefWidth="153.0" styleClass="btn" text="New Record" AnchorPane.rightAnchor="0.0" />
+            <TextField fx:id="txtSearch" layoutX="14.0" layoutY="3.0" onAction="#filterChanged" promptText="Search by Name" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
